@@ -1,8 +1,7 @@
-# LuaJIT-BytecodeDumpFormat
-Description of LuaJIT compiler bytecode dump format(`.luac` files)
+# LuaJIT Bytecode Dump format
+This repository contains description of LuaJIT compiler bytecode dump format(`.luac` files)
 
-## LuaJIT Bytecode Dump format
-
+## Bytecode Dump Structure  
 Some description:  
 `{...} - Variable, describes bellow or above`  
 `(...:TYPE) - Part of bytecode with type TYPE(types written in win-style i.e. BYTE, BOOL, ULEB128 and etc.)`  
@@ -13,7 +12,6 @@ Remark 1
 > Type ULEB128_33 means than usefull data is in 32 top bits, and lowest bit is a mark of something
 > Lowest bit marks in structure as `LOWEST_BIT`
 
-## Bytecode Dump Structure
 ```
 {magic}{header}{proto[]}\x00
 header=(version:BYTE)(flags:ULEB128)[if !(flags & BCDUMP_F_STRIP) then (chunkname_len:ULEB128)(chunkname:BYTE[chunkname_len])]
