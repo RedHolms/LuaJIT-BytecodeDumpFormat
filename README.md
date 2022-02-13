@@ -1,5 +1,6 @@
 # LuaJIT Bytecode Dump format
 This repository contains description of LuaJIT compiler bytecode dump format(`.luac` files)
+You can see examples of reading bytecode dump from code in [code-examples](https://github.com/RedHolms/LuaJIT-BytecodeDumpFormat/tree/main/code-examples)
 
 ## Bytecode Dump Structure  
 
