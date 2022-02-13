@@ -9,8 +9,8 @@ Some description:
 `\xHH - HEX value`  
 
 Remark 1
-> Type ULEB128_33 means than usefull data is in 32 top bits, and lowest bit is a mark of something
-> Lowest bit marks in structure as `LOWEST_BIT`
+> Type ULEB128_33 means than usefull data is in 32 top bits, and lowest bit is a mark of something  
+> Lowest bit marks in structure as `..._LOWEST_BIT`, where ... - name of bytecode part with type ULEB128_33
 
 ```
 {magic}{header}{proto[]}\x00
@@ -24,7 +24,7 @@ proto_head=(proto_len:ULEB128)(pflags:BYTE)
 proto={proto_head}(bytecode:INT32[sizebc])(uvdata:INT16[sizeuv]){constants}[if !(flags & BCDUMP_F_STRIP) then (debug:BYTE[sizedbg])]
 constants={kgc[sizekgc]}{knum[sizekn]}
 kgc=(kgctype:ULEB128){kgcvalue}
-knum=(low:ULEB128_33)[if (LOWEST_BIT) then (high:ULEB128)]
+knum=(low:ULEB128_33)[if (low_LOWEST_BIT) then (high:ULEB128)]
 kgcvalue= ... # Depends by type(TYPE)
 
 kgcvalue[if TYPE>=BCDUMP_KGC_STR]=(buffer:BYTE[TYPE-BCDUMP_KGC_STR])
