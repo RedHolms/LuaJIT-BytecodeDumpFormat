@@ -18,13 +18,13 @@ This repository contains description of LuaJIT compiler bytecode dump format(`.l
 ```
 {magic}{header}{proto[]}\x00
 header=(version:BYTE)(flags:ULEB128)[if !(flags & BCDUMP_F_STRIP) then (chunkname_len:ULEB128)(chunkname:BYTE[chunkname_len])]
+proto={proto_head}(bytecode:INT32[sizebc])(uvdata:INT16[sizeuv]){constants}[if !(flags & BCDUMP_F_STRIP) then (debug:BYTE[sizedbg])]
 proto_head=(proto_len:ULEB128)(pflags:BYTE)
    (numparams:BYTE)(framesize:BYTE)
    (sizeuv:BYTE)(sizekgc:ULEB128)(sizekn:ULEB128)(sizebc:ULEB128)
    [if !(flags & BCDUMP_F_STRIP) then (sizedbg:ULEB128)
       [if (sizedbg != 0) then (firstline:ULEB128)(numline:ULEB128)]
    ]
-proto={proto_head}(bytecode:INT32[sizebc])(uvdata:INT16[sizeuv]){constants}[if !(flags & BCDUMP_F_STRIP) then (debug:BYTE[sizedbg])]
 constants={kgc[sizekgc]}{knum[sizekn]}
 kgc=(kgctype:ULEB128){kgcvalue}
 knum=(low:ULEB128_33)[if (low_LOWEST_BIT) then (high:ULEB128)]
