@@ -46,12 +46,14 @@ ktabkvalue[else]=NONE # Internal constant, check description
 magic=\x1B\x4C\x4A
 ```
 
-`version`  
+### Description of bytecode parts
+
+#### `version`  
 Version of bytecode dump. Last version in moment of writing = `1`  
 
 -----------------------------------------------------------------
 
-`flags`  
+#### `flags`  
 Flags of bytecode.  
 Acceptable Flags  
 	- `BCDUMP_F_BE(=1)` - Describes, is bytecode in big-endian format  
