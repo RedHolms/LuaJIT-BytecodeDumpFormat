@@ -67,14 +67,16 @@ Acceptable flags:
 
 `chunkname_len` : `ULEB128`  
 Length of `chunkname`  
-***Exists only if `BCDUMP_F_STRIP` flag not defined***
+  
+***!!! Exists only if ***`BCDUMP_F_STRIP`*** flag not defined***
 
 -----------------------------------------------------------------
 
 `chunkname` : `BYTE[chunkname_len]`  
-Name of the chunk this proto was defined in  
-***Uses only for debug and tracebacks***  
-***Exists only if `BCDUMP_F_STRIP` flag not defined***
+Name of the chunk this proto was defined in
+  
+***!!! Uses only for debug and tracebacks***  
+***!!! Exists only if ***`BCDUMP_F_STRIP`*** flag not defined***
 
 -----------------------------------------------------------------
 
@@ -124,21 +126,24 @@ Length of `bytecode`
 
 `sizedbg` : `ULEB128`  
 Length of `debug`  
-***Exists only if `BCDUMP_F_STRIP` flag not defined***
+  
+***!!! Exists only if ***`BCDUMP_F_STRIP`*** flag not defined***
 
 -----------------------------------------------------------------
 
 `firstline` : `ULEB128`  
 First line of the function definition  
-***Uses only for debug and tracebacks***  
-***Exists only if `BCDUMP_F_STRIP` flag not defined and `sizedbg` != 0***
+  
+***!!! Uses only for debug and tracebacks***  
+***!!! Exists only if ***`BCDUMP_F_STRIP`*** flag not defined and `sizedbg` != 0***
 
 -----------------------------------------------------------------
 
 `numline` : `ULEB128`  
 Number of lines for the function definition  
-***Uses only for debug and tracebacks***  
-***Exists only if `BCDUMP_F_STRIP` flag not defined and `sizedbg` != 0***
+  
+***!!! Uses only for debug and tracebacks***  
+***!!! Exists only if ***`BCDUMP_F_STRIP`*** flag not defined and `sizedbg` != 0***
 
 -----------------------------------------------------------------
 
