@@ -48,7 +48,9 @@ magic=\x1B\x4C\x4A
 
 `version`  
 Version of bytecode dump. Last version in moment of writing = `1`  
+
 -----------------------------------------------------------------
+
 `flags`  
 Flags of bytecode.  
 Acceptable Flags  
