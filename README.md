@@ -1,12 +1,13 @@
 # LuaJIT Bytecode Dump format
-This repository contains description of LuaJIT compiler bytecode dump format(`.luac` files)
+This repository contains description of LuaJIT compiler bytecode dump format(`.luac` files)  
+You can see examples of reading bytecode dump from code in [code-examples](https://github.com/RedHolms/LuaJIT-BytecodeDumpFormat/tree/main/code-examples)
 
 ## Bytecode Dump Structure  
 
 ### Some description  
 `{...} - Variable, describes bellow or above`  
 `(...:TYPE) - Part of bytecode with type TYPE(types written in win-style i.e. BYTE, BOOL, ULEB128 and etc.)`  
-`[if (cond) then (...)] - If cond, then path (...) will be exist in bytecode`  
+`[if (cond) then (...)] - If cond, then (...) will be exist in bytecode`  
 `\xHH - HEX value`  
 
 ### Remark 1
