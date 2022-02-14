@@ -112,7 +112,7 @@ const char* read_buffer(bytecode* bc, int size) {
 void read_ktabk(bytecode* bc) {
    int tp = read_uleb128(bc);
    if (tp >= BCDUMP_KTAB_STR) {
-      int len = read_uleb128(bc);
+      int len = tp - BCDUMP_KTAB_STR;
       read_buffer(bc, len);
    } else if (tp == BCDUMP_KTAB_INT) {
       read_uleb128(bc);
